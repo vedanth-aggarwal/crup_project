@@ -24,9 +24,10 @@ npx vercel link --cwd apps/web
 
 Crons (`apps/web/vercel.json`) run daily on the Hobby plan: scrape 6–7am PT, extraction backlog 30 min later, emails 8–9am PT.
 
-## 4. Email (Resend)
-- Create an API key → `RESEND_API_KEY`.
-- Resend can't send *from* a gmail.com address. Verify a domain you own (or a subdomain) in Resend and set `EMAIL_FROM` to an address on it, e.g. `hello@mail.yourdomain.com`.
+## 4. Email (Gmail SMTP)
+- Turn on 2-Step Verification for the Gmail account, then create an **App Password** (Google Account → Security → App passwords).
+- Set `SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=465`, `SMTP_USER` to the Gmail address, `SMTP_PASS` to the 16-character app password (spaces are fine), and `EMAIL_FROM` to the same address.
+- Test it: `cd apps/web && node --env-file=../../.env scripts/test-email.mjs you@example.com`.
 
 ## 5. First run
 1. Sign up on the site with an email listed in `ADMIN_EMAILS`. You get the admin role automatically.
