@@ -1,0 +1,102 @@
+/*
+ * Clubo design tokens: the single source of truth (PLAN.md §13.2).
+ * Components use these through Tailwind classes only. Never raw hex values.
+ * Brand: deep navy + warm gold, used sparingly so posters stay the focus.
+ */
+
+:root {
+  /* neutrals (maps to the plan's --bg / --surface / --text tokens) */
+  --background: oklch(0.985 0.004 85);          /* warm paper */
+  --foreground: oklch(0.2 0.03 255);            /* ink navy */
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+  --surface-raised: oklch(1 0 0);
+  --muted: oklch(0.955 0.006 85);
+  --muted-foreground: oklch(0.47 0.02 255);
+  --border: oklch(0.9 0.008 85);
+  --input: oklch(0.88 0.01 85);
+
+  /* brand */
+  --brand: oklch(0.27 0.07 255);                /* ~#0B2545 navy */
+  --brand-foreground: oklch(0.98 0.005 85);
+  --gold: oklch(0.8 0.165 85);                  /* ~#F2B705 gold */
+  --gold-foreground: oklch(0.22 0.04 70);
+
+  /* shadcn semantic slots */
+  --primary: var(--brand);
+  --primary-foreground: var(--brand-foreground);
+  --secondary: oklch(0.95 0.01 255);
+  --secondary-foreground: var(--brand);
+  --accent: oklch(0.95 0.012 255);              /* hover wash (not the gold) */
+  --accent-foreground: var(--brand);
+  --destructive: oklch(0.56 0.21 27);
+  --ring: oklch(0.55 0.12 255);
+
+  /* status */
+  --success: oklch(0.55 0.14 155);
+  --warning: oklch(0.68 0.16 65);               /* deadline soon */
+  --danger: oklch(0.56 0.21 27);                /* deadline today */
+  --info: oklch(0.55 0.13 245);
+
+  /* category chips derive from a hue: see .cat-chip below */
+  --cat-l-bg: 0.95;
+  --cat-c-bg: 0.045;
+  --cat-l-fg: 0.4;
+  --cat-c-fg: 0.13;
+
+  --chart-1: var(--brand);
+  --chart-2: var(--gold);
+  --chart-3: var(--info);
+  --chart-4: var(--success);
+  --chart-5: var(--warning);
+
+  --radius: 0.625rem;                           /* md 10px; lg = 16px via scale */
+
+  --shadow-sm: 0 1px 2px oklch(0.2 0.03 255 / 0.06), 0 1px 1px oklch(0.2 0.03 255 / 0.04);
+  --shadow-md: 0 6px 16px -4px oklch(0.2 0.03 255 / 0.12), 0 2px 4px oklch(0.2 0.03 255 / 0.06);
+  --shadow-lg: 0 24px 48px -12px oklch(0.2 0.03 255 / 0.25);
+
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+}
+
+.dark {
+  --background: oklch(0.16 0.02 260);
+  --foreground: oklch(0.96 0.005 85);
+  --card: oklch(0.2 0.022 260);
+  --popover: oklch(0.22 0.024 260);
+  --surface-raised: oklch(0.24 0.026 260);
+  --muted: oklch(0.24 0.022 260);
+  --muted-foreground: oklch(0.72 0.015 255);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 14%);
+
+  --brand: oklch(0.8 0.165 85);                 /* gold leads in dark mode */
+  --brand-foreground: oklch(0.2 0.04 70);
+  --primary: var(--brand);
+  --primary-foreground: var(--brand-foreground);
+  --secondary: oklch(0.26 0.03 260);
+  --secondary-foreground: oklch(0.96 0.005 85);
+  --accent: oklch(0.27 0.03 260);
+  --accent-foreground: oklch(0.96 0.005 85);
+  --destructive: oklch(0.68 0.19 25);
+  --ring: oklch(0.8 0.12 85);
+
+  --success: oklch(0.72 0.15 155);
+  --warning: oklch(0.8 0.15 70);
+  --danger: oklch(0.7 0.19 25);
+  --info: oklch(0.74 0.12 245);
+
+  --cat-l-bg: 0.3;
+  --cat-c-bg: 0.06;
+  --cat-l-fg: 0.88;
+  --cat-c-fg: 0.09;
+
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.4);
+  --shadow-md: 0 8px 20px -6px oklch(0 0 0 / 0.55);
+  --shadow-lg: 0 24px 56px -12px oklch(0 0 0 / 0.7);
+}

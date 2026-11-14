@@ -1,0 +1,31 @@
+# env / secrets
+.env
+.env.local
+.env.*.local
+*service-account*.json
+*firebase-adminsdk*.json
+
+# deps / builds
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+
+# firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# misc
+.DS_Store
+*.log
+
+.vercel
+.env*
+!.env.example
+
+# local tooling
+.mcp.json
+.claude/settings.local.json

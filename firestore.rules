@@ -1,0 +1,12 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // All reads and writes go through the Next.js server (Firebase Admin SDK on
+    // Vercel), which bypasses these rules and enforces auth itself.
+    // The browser only uses Firebase Auth, never Firestore directly,
+    // so direct client access stays fully closed.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
